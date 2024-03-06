@@ -102,7 +102,7 @@ Follow the wizard prompts to guide you through the packaging process.
 To package a Python project into a standalone executable using the CLI:
 
 ```bash
-python packager.py "my_project.py" --icon my_icon.ico --output-dir dist --no-compress --verbose
+python package.py "\path\to\my_project.py" --icon my_icon.ico --output-dir dist --no-compress --verbose
 ```
 
 This will package the my_project.py script into a standalone executable with the specified options.
