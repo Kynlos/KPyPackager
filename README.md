@@ -108,7 +108,7 @@ python package.py "\path\to\my_project.py" --icon my_icon.ico --output-dir dist 
 With more options:
 
 ```bash
-python package.py -d \path\to\my_project \
+python package.py -d "\path\to\my_project" \
     --output-dir dist \
     --no-compress \
     --verbose \
