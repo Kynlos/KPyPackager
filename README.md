@@ -97,12 +97,42 @@ Follow the wizard prompts to guide you through the packaging process.
 - `--name`: Custom name for the packaged executable.
 
 
-## Example
+## Examples
 
 To package a Python project into a standalone executable using the CLI:
 
 ```bash
 python package.py "\path\to\my_project.py" --icon my_icon.ico --output-dir dist --no-compress --verbose
+```
+
+With more options:
+
+```bash
+python package.py -d \path\to\my_project \
+    --output-dir dist \
+    --no-compress \
+    --verbose \
+    --icon my_icon.ico \
+    --hidden-imports pandas \
+    --env-vars "KEY=VALUE,ANOTHER_KEY=ANOTHER_VALUE" \
+    --additional-files "data_folder:data_folder" \
+    --upx-level 9 \
+    --custom-commands="--add-data 'resource_folder:resource_folder' --exclude '__pycache__'" \
+    --name NAME \
+    --custom-upx C:\path\to\custom_upx.exe \
+    --bundle-stdlib \
+    --clean-build \
+    --warn-project-version \
+    --warn-no-version \
+    --app-version 1.0 \
+    --file-version 1.0 \
+    --no-confirm
+```
+
+(Single line)
+
+```bash
+python package.py -d "\path\to\my_project" --output-dir dist --no-compress --verbose --icon my_icon.ico --hidden-imports pandas --env-vars "KEY=VALUE,ANOTHER_KEY=ANOTHER_VALUE" --additional-files "data_folder:data_folder" --upx-level 9 --custom-commands="--add-data 'resource_folder:resource_folder' --exclude '__pycache__'" --name NAME --custom-upx C:\path\to\custom_upx.exe --bundle-stdlib --clean-build --warn-project-version --warn-no-version --app-version 1.0 --file-version 1.0 --no-confirm
 ```
 
 This will package the my_project.py script into a standalone executable with the specified options.
