@@ -1,41 +1,40 @@
-# Kynlos Python Packager
+# Kynlos Python Packager User Guide
 
-This Python script provides functionality to package a Python project into a standalone executable using PyInstaller.
+The Kynlos Python Packager is a tool designed to package Python projects into standalone executable files using PyInstaller. This guide provides instructions on how to use the packager effectively.
+
+## Getting Started
+
+1. **Installation**: Ensure you have Python installed on your system. You can download and install Python from the [official Python website](https://www.python.org/).
+
+2. **Download Packager**: Clone or download the Kynlos Python Packager from the repository.
+
+3. **Install Dependencies**: Install the required dependencies by running `pip install -r requirements.txt` in the packager directory.
 
 ## Usage
 
-### Using Command Line Interface (CLI)
+### Command Line Interface (CLI)
+
+To use the Kynlos Python Packager via the command line interface:
 
 ```bash
-python packager.py [-h] [-w] [path] [-d] [-o OUTPUT_DIR] [-i INCLUDE] [-a PYINSTALLER_ARGS]
-                   [-n OUTPUT_NAME] [-c] [--icon ICON] [--hidden-imports HIDDEN_IMPORTS]
-                   [--version VERSION] [--binaries BINARIES] [--license LICENSE]
-                   [--env-vars ENV_VARS] [--python PYTHON] [--no-compress] [--hooks HOOKS]
-                   [--bootloader BOOTLOADER] [--manifest MANIFEST] [--splash SPLASH]
-                   [--runtime-hooks RUNTIME_HOOKS] [--exe-format {exe,directory}]
-                   [--system-path SYSTEM_PATH] [--upx-level {0..9}] [--eula EULA]
-                   [--spec-file SPEC_FILE] [--runtime-hook-spec RUNTIME_HOOK_SPEC]
-                   [--template TEMPLATE] [--compile-pyc] [--icon-mac ICON_MAC]
-                   [--package-data PACKAGE_DATA] [--build-mode BUILD_MODE]
-                   [--custom-hooks CUSTOM_HOOKS] [--custom-upx CUSTOM_UPX]
-                   [--bundle-stdlib] [--exclude EXCLUDE] [--bootloader-conf BOOTLOADER_CONF]
-                   [--verbose] [--external-modules EXTERNAL_MODULES] [--bundled-icon BUNDLED_ICON]
-                   [--temp-dir TEMP_DIR] [--upx-conf UPX_CONF] [--resource-files RESOURCE_FILES]
-                   [--app-name APP_NAME] [--log-dir LOG_DIR] [--app-version APP_VERSION]
-                   [--additional-files ADDITIONAL_FILES] [--user-hooks USER_HOOKS]
-                   [--file-version FILE_VERSION] [--custom-library CUSTOM_LIBRARY] [--upx-path UPX_PATH]
-                   [--no-confirm] [--custom-commands CUSTOM_COMMANDS] [--freeze-imports] [--clean-build]
-                   [--warn-project-version] [--warn-no-version] [--name NAME]
+python packager.py [options]
 ```
 
-### Using Wizard
+Replace `[options]` with the desired parameters and flags outlined below.
+
+### Wizard
+
+Alternatively, you can use the interactive wizard to guide you through the packaging process:
+
 ```bash
-python packager.py PATH -w
+python packager.py -w
 ```
 
-Follow the wizard prompts to guide you through the packaging process.
+Follow the prompts to configure your packaging settings.
 
-### Parameters
+## Parameters and Options
+
+The Kynlos Python Packager supports various parameters and options to customize the packaging process. Here's a summary of the available options:
 
 - `-w`, `--wizard`: Launches a wizard to guide you through the packaging process.
 - `path`: Path to the Python project directory.
@@ -96,13 +95,27 @@ Follow the wizard prompts to guide you through the packaging process.
 - `--warn-no-version`: Enable warnings for missing version information.
 - `--name`: Custom name for the packaged executable.
 
+For a complete list of options and usage examples, refer to the [CLI usage](#using-command-line-interface-cli) section.
 
 ## Example
 
-To package a Python project into a standalone executable using the CLI:
+To package a Python project into a standalone executable with custom settings:
 
 ```bash
 python packager.py my_project.py --icon my_icon.ico --output-dir dist --no-compress --verbose
 ```
 
-This will package the my_project.py script into a standalone executable with the specified options.
+This command packages the `my_project.py` script into a standalone executable with the specified options.
+
+## Troubleshooting
+
+If you encounter any issues or errors during the packaging process, refer to the [troubleshooting guide](#troubleshooting) in the documentation for possible solutions.
+
+---
+
+This user guide provides a brief overview of the Kynlos Python Packager and its usage. For more detailed instructions and advanced configurations, consult the documentation included with the packager.
+
+If you have any further questions or need assistance, feel free to reach out to the packager's support team.
+
+Happy packaging!
+
